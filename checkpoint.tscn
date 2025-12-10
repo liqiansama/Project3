@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctdpvlrfpekfg"]
+
+[ext_resource type="Script" uid="uid://dj6afemhyrwo6" path="res://platformer/tcsn/checkpoint.gd" id="1_r6hke"]
+[ext_resource type="Script" uid="uid://c6iucwyqxscvx" path="res://platformer/scripts/precipice.gd" id="2_tnhlw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ophm"]
+size = Vector2(24, 126.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6u72w"]
+size = Vector2(2973.5, 30)
+
+[node name="checkpoint" type="Area2D"]
+script = ExtResource("1_r6hke")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1265, 461)
+shape = SubResource("RectangleShape2D_7ophm")
+
+[node name="precipice" type="Area2D" parent="."]
+position = Vector2(-2301, 398)
+script = ExtResource("2_tnhlw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="precipice"]
+position = Vector2(3825.25, 367)
+shape = SubResource("RectangleShape2D_6u72w")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="precipice" to="precipice" method="_on_body_entered"]

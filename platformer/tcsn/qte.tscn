@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci2ml2thr5u43"]
+
+[ext_resource type="Script" uid="uid://c2bjelc5hyxah" path="res://qte.gd" id="1_f7si5"]
+[ext_resource type="PackedScene" uid="uid://ba61bdp0fj24u" path="res://platformer/tcsn/qte_ui.tscn" id="2_f7si5"]
+
+[node name="qte" type="Node2D"]
+
+[node name="QTEController" type="Node2D" parent="."]
+script = ExtResource("1_f7si5")
+
+[node name="QTE_UI" parent="." instance=ExtResource("2_f7si5")]

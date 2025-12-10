@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtgk3atpghgxk"]
+
+[ext_resource type="Script" uid="uid://c6y2sd4gupe0e" path="res://platformer/scripts/door.gd" id="1_v6xrn"]
+[ext_resource type="AudioStream" uid="uid://dfblnrmflgm8t" path="res://sound-music/door.wav" id="3_w2mbi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_50cdl"]
+size = Vector2(15, 18)
+
+[node name="Door" type="Area2D"]
+script = ExtResource("1_v6xrn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_50cdl")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_w2mbi")

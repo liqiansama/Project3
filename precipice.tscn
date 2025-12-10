@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bens57an07yym"]
+
+[ext_resource type="Script" uid="uid://c6iucwyqxscvx" path="res://platformer/scripts/precipice.gd" id="1_sqcuv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ttm22"]
+size = Vector2(2973.5, 30)
+
+[node name="precipice" type="Area2D"]
+script = ExtResource("1_sqcuv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 6)
+shape = SubResource("RectangleShape2D_ttm22")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

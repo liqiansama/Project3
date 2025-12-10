@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c6jvfmgsy7xcf"
+path="res://.godot/imported/Bartosz Pokrywka - The Adventure Begins.mp3-98e6bebc69cc49fed6edbe61738fc37f.mp3str"
+
+[deps]
+
+source_file="res://sound-music/Bartosz Pokrywka - The Adventure Begins.mp3"
+dest_files=["res://.godot/imported/Bartosz Pokrywka - The Adventure Begins.mp3-98e6bebc69cc49fed6edbe61738fc37f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

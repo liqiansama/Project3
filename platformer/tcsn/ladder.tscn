@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://db2750aa4hpx2"]
+
+[ext_resource type="Script" uid="uid://d22a5o5pt8dve" path="res://platformer/scripts/ladder.gd" id="1_2rian"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vd7eq"]
+size = Vector2(11, 118)
+
+[node name="ladder" type="Area2D"]
+script = ExtResource("1_2rian")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6.5, 59)
+shape = SubResource("RectangleShape2D_vd7eq")

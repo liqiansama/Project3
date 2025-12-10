@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg2dtkbyq41gt"]
+
+[ext_resource type="Script" uid="uid://bsbrdfh2j75jb" path="res://collecttest.gd" id="1_vn7bk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vn7bk"]
+size = Vector2(124, 121)
+
+[node name="Node2D" type="CharacterBody2D" groups=["collection"]]
+script = ExtResource("1_vn7bk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["collection"]]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_vn7bk")

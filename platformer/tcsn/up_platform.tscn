@@ -1,0 +1,147 @@
+[gd_scene load_steps=10 format=3 uid="uid://cmsbipaprgu3i"]
+
+[ext_resource type="Script" uid="uid://cg5b4jplk36h7" path="res://up_platform.gd" id="1_u6s5o"]
+[ext_resource type="Texture2D" uid="uid://dyxycw3txjw7r" path="res://sprites/castle-tileset.png" id="2_xnn2k"]
+[ext_resource type="AudioStream" uid="uid://cdbn4ghjuyglq" path="res://sound-music/platform.wav" id="3_sqk0q"]
+[ext_resource type="AudioStream" uid="uid://jycxmpxk7b80" path="res://sound-music/explosion.wav" id="4_og4pt"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xnn2k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sqk0q"]
+size = Vector2(143.5, 15)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xnn2k"]
+texture = ExtResource("2_xnn2k")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+0:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+0:12/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_og4pt"]
+sources/0 = SubResource("TileSetAtlasSource_xnn2k")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_og4pt"]
+size = Vector2(37, 34)
+
+[node name="up_platform" type="Node2D"]
+script = ExtResource("1_u6s5o")
+
+[node name="Platform" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_xnn2k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+position = Vector2(72.25, 8.5)
+shape = SubResource("RectangleShape2D_sqk0q")
+
+[node name="TileMap" type="TileMap" parent="Platform"]
+tile_set = SubResource("TileSet_og4pt")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 327680, 7, 1, 393216, 7, 2, 393216, 7, 3, 393216, 7, 4, 393216, 7, 5, 393216, 7, 6, 393216, 7, 7, 393216, 7, 8, 458752, 7)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-41.5, 4)
+shape = SubResource("RectangleShape2D_og4pt")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -69.0
+offset_top = -23.0
+offset_right = -29.0
+
+[node name="sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_sqk0q")
+
+[node name="up_platform" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_og4pt")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

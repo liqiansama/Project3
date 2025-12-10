@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c8376xcwooa1i"
+path="res://.godot/imported/daisan - Departure Road.mp3-421e25dae78e9c33891275d3b42e2620.mp3str"
+
+[deps]
+
+source_file="res://sound-music/daisan - Departure Road.mp3"
+dest_files=["res://.godot/imported/daisan - Departure Road.mp3-421e25dae78e9c33891275d3b42e2620.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

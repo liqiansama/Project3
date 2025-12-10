@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0k3hceinbjng"]
+
+[ext_resource type="Script" uid="uid://drr1bswukwt6a" path="res://platformer/scripts/ui.gd" id="1_4t24w"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lpudk"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="ui" type="CanvasLayer"]
+script = ExtResource("1_4t24w")
+
+[node name="txtCoins" type="Label" parent="."]
+offset_left = 1069.0
+offset_top = 17.0
+offset_right = 1109.0
+offset_bottom = 40.0
+scale = Vector2(2.49228, 2.85488)
+
+[node name="txtTime" type="Label" parent="."]
+offset_left = 19.0
+offset_top = 16.0
+offset_right = 59.0
+offset_bottom = 39.0
+scale = Vector2(3.44816, 3.08274)
+label_settings = SubResource("LabelSettings_lpudk")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 959.0
+offset_top = 19.0
+offset_right = 999.0
+offset_bottom = 42.0
+scale = Vector2(2.36406, 2.49619)
+text = "Coin:"
